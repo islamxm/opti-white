@@ -1,0 +1,129 @@
+.product {
+    background-color: #fff;
+    padding: 20px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+
+    &__img {    
+        height: 150px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: flex;
+        }
+    }
+
+    &__body {
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+
+        &_name {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--black);
+            @include def-anim;
+            display: block;
+
+            &:hover {
+                color: #3977CA;
+            }
+        }
+
+        &_text {
+            font-size: 13px;
+            line-height: 16px;
+            margin-bottom: 30px;
+
+            /* identical to box height */
+            
+            
+            color: #1A2030;
+        }
+
+        &_action {
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            flex: 1 0 auto;
+
+            &_link {
+                color:  #3977CA;
+                font-weight: 600;
+                position: relative;
+                padding-right: 20px;
+                
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                &:after {
+                    position: absolute;
+                    width: 15px;
+                    height: 15px;
+                    background-repeat: no-repeat;background-position: center;
+                    background-image: url('../img/blue-arrow.svg');
+                    background-size: contain;
+                    content: '';
+                    top: calc(50% - 7.5px);
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .product {
+
+        display: flex;
+        align-items: center;
+
+        &__img {
+            width: 190px;
+            flex: 0 0 auto;
+        }
+
+        &__body {
+
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .product {
+        padding: 15px;
+        &__img {
+            height: 100px;
+            width: 120px;
+            margin-right: 20px;
+        }
+
+        &__body {
+
+            &_name {
+                font-size: 14px;
+                line-height: 17px;
+                margin-bottom: 10px;
+            }
+
+            &_text {
+                font-size: 11px;
+                line-height: 13px;
+                margin-bottom: 25px;
+            }
+
+            &_action {
+
+                &_link {
+                    font-size: 13px;
+                    line-height: 16px;
+                }
+            }
+        }
+    }
+}

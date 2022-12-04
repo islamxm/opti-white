@@ -1,0 +1,40 @@
+.burgerMenu {
+    padding: 30px;
+    background-color: #fff;
+    position: fixed;
+    top: 81px;
+    left: 0;
+    z-index: 1000;
+    width: 320px;
+    display: none;
+    @include def-anim;
+
+    li {
+        margin-bottom: 40px;
+
+        a {
+            font-weight: 600;
+            color: var(--black);
+            @include def-anim;
+            
+            &:hover {
+                color: var(--green);
+            }
+        }
+
+        a.active {
+            color: var(--green);
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .burgerMenu {
+        display: block;
+        transform: translateX(-101%);
+    }
+
+    .burgerMenu.active {
+        transform: translateX(0);
+    }
+}

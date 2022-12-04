@@ -1,0 +1,224 @@
+.header.bg-toggle {
+    background-color: rgba(#000, .5);
+    backdrop-filter: blur(10px);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    @include def-anim;
+
+    &__in {
+        padding: 30px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__burger {
+        display: none;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: flex;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+
+        li {
+            margin: 0 30px;
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        &_item.active {
+            opacity: 1;
+        }
+        &_item {
+            
+            font-weight: 600;
+            display: block;
+            @include def-anim;
+            color: var(--white);
+            opacity: .7;
+                    
+            &:hover {
+                opacity: 1;
+            }
+            
+
+        }
+    }
+
+    &__contact {
+        display: flex;
+        align-items: center;
+
+        &_btn {
+            flex: 0 0 auto;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--green);
+            border-radius: 100%;
+            @include def-anim;
+            
+            svg {
+                path {
+                    @include def-anim;
+                }
+            }
+
+            &:hover {
+                background-color: var(--white);
+
+                svg {
+                    path {
+                        fill: var(--black);
+                    }
+                }
+            }
+        }
+
+        &_label {
+            color: var(--white);
+            margin-left: 30px;
+            
+
+            &_value {
+                font-family: 'Saira Extra Condensed', sans-serif;
+                // font-weight: 600;
+                font-size: 40px;
+                line-height: 50px;
+
+            }
+
+            &_text {
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 19px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+    .header {
+
+        &__contact {
+
+            &_label {
+                // display: none;
+            }
+        }
+    }
+}
+@media (max-width: 1200px) {
+    .header {
+
+
+        &__in {
+            padding: 15px 0;
+        }
+
+        &__burger.active {
+            span {
+                &:nth-child(1) {
+                    transform: rotate(45deg);
+                    top: calc(50% - 1px);
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                    transform: translateX(-10px);
+                }
+
+                &:nth-child(3) {
+                    transform: rotate(-45deg);
+                    bottom: calc(50% - 1px);
+                }
+            }
+        }
+
+        &__burger {
+            display: block;
+            width: 50px;
+            height: 35px;
+            position: relative;
+            background-color: transparent;
+            border: none;
+
+            span {
+                height: 4px;
+                width: 100%;
+                background-color: var(--white);
+                position: absolute;
+                @include def-anim;
+
+
+                &:nth-child(1) {
+                    top: 0;
+                    left: 0;
+                }
+
+                &:nth-child(2) {
+                    top: calc(50% - 2px);
+                    left: 0;
+                }
+
+                &:nth-child(3) {
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+        }
+
+        &__nav {
+            display: none;  
+        }
+
+        &__contact {
+
+
+            &_label {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+
+        &__logo {
+            height: 30px;
+        }
+
+        &__burger {
+            width: 40px;
+            height: 30px;
+        }
+    }
+}

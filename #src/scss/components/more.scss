@@ -1,0 +1,35 @@
+.more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+
+    &__link {
+        position: relative;
+        color: var(--white);
+        font-weight: 600;
+        text-transform: uppercase;
+        padding-right: 30px;
+        @include def-anim;
+        &:hover {
+            &:after {
+                right: -10px;
+            }
+        }    
+        &:after {
+            content: '';
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            background-image: url('../../img/white-arrow.svg');
+            top: calc(50% - 12.5px);
+            right: 0;
+            @include def-anim;
+        }
+    }
+}

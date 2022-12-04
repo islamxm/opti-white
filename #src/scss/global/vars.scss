@@ -1,0 +1,12 @@
+:root {
+    --black: #333;
+    --gray: #999999;
+    --white: #fff;
+    --green: #309330;
+    --green_hover: #38A938;
+    --green_active: #268326;
+}
+
+@mixin def-anim {
+    transition: all .3s ease;
+}
