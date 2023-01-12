@@ -1135,9 +1135,9 @@ body:after {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 140px;
 }
 .objCard__body_name {
-  margin-bottom: 42px;
   font-weight: 700;
   font-size: 16px;
   line-height: 150%;
